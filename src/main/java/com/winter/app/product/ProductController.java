@@ -30,7 +30,7 @@ public class ProductController {
 	}	
 	
 	@RequestMapping(value="detail",method =RequestMethod.GET)
-	public String detail(ProductDTO productDTO,Model model) {
+	public String detail(ProductDTO productDTO,Model model) throws Exception {
 		productDTO = dao.detail(productDTO);
 		model.addAttribute("detail", productDTO);
 		
