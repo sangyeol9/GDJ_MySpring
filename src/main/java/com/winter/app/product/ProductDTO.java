@@ -10,6 +10,12 @@ public class ProductDTO {
 	public Long getProductnum() {
 		return productnum;
 	}
+	public Double getProductjumsu() {
+		return productjumsu;
+	}
+	public void setProductjumsu(Double productjumsu) {
+		this.productjumsu = productjumsu;
+	}
 	public void setProductnum(Long productnum) {
 		this.productnum = productnum;
 	}
@@ -31,12 +37,6 @@ public class ProductDTO {
 	public void setProductrate(Double productrate) {
 		this.productrate = productrate;
 	}
-	public Double getProductjumsu() {
-		return productjumsu;
-	}
-	public void setProductjumsu(Double productjumsu) {
-		this.productjumsu = productjumsu;
-	}
-	
+
 	
 }
