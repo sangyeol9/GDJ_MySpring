@@ -37,7 +37,6 @@ public class ProductDTO {
 	public void setProductrate(Double productrate) {
 		this.productrate = productrate;
 	}
-	
-	
+
 	
 }
