@@ -42,7 +42,7 @@ public class ProductController {
 		
 		return "product/add";
 	}
-	
+	@RequestMapping(value="add",method = RequestMethod.POST)
 	public String add(HttpServletRequest request) throws Exception {
 		dto.setProductnum(Long.valueOf( request.getParameter("productnum")) );
 		dto.setProductname(request.getParameter("productname"));

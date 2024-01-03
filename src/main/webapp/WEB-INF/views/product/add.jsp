@@ -12,7 +12,7 @@
 	<c:import url="../temps/header.jsp"></c:import>
 	
 	<section>
-		<form action =add>
+		<form action =add method="post">
   <div class="mb-3">
     <label for="product_num" class="form-label">product_num</label>
     <input type="text" class="form-control" id="product_num" name = "productnum" >
