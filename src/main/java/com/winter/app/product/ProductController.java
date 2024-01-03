@@ -36,5 +36,23 @@ public class ProductController {
 		
 		return "product/detail";
 	}
+
+	@RequestMapping(value ="add",method = RequestMethod.GET)
+	public String add() {
+		
+		return "product/add";
+	}
+	
+	public String add(HttpServletRequest request) throws Exception {
+		dto.setProductnum(Long.valueOf( request.getParameter("productnum")) );
+		dto.setProductname(request.getParameter("productname"));
+		dto.setProductcontents(request.getParameter("productcontents"));
+		dto.setProductrate(Double.valueOf( request.getParameter("productrate") ));
+		dto.setProductjumsu(Double.valueOf( request.getParameter("productjumsu") ));
+		int result = dao.add(dto);
+		request.setAttribute("result", result);
+		
+		return "result/result";
+	}
 	
 }

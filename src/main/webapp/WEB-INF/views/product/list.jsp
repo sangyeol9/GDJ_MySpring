@@ -38,6 +38,9 @@
 			
 		</tbody>
 	</table>
+		
+		<a class="btn btn-primary" href="add" >add  </a>
+	
 	<c:import url="../temps/bootstrap_js.jsp"></c:import>
 	
 </body>

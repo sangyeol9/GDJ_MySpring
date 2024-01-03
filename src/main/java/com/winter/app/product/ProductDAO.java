@@ -71,10 +71,24 @@ public class ProductDAO {
 		return dto;
 	}
 	
-	public int add(ProductDTO productDTO) {
+	public void add() {
+		
+		
+	}
+	
+	public int add(ProductDTO productDTO) throws Exception {
 		int result = 0;	
-	
-	
+		Connection con = DBConnector.getConnector();
+		String sql = "INSERT INTO PRODUCT VALUES(?,?,?,?,?)";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setLong(1,productDTO.getProductnum());
+		st.setString(2, productDTO.getProductname());
+		st.setString(3,productDTO.getProductcontents());
+		st.setDouble(4, productDTO.getProductrate());
+		st.setDouble(5, productDTO.getProductjumsu());
+		result = st.executeUpdate();
+		
+		DBConnector.disConnect(st, con);
 		return result;	
 	}
 	
