@@ -1,5 +1,7 @@
 package com.winter.app.product;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -20,13 +22,17 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value ="list",method = RequestMethod.GET)
-	public String list(HttpServletRequest request) {
-		
+	public String list(HttpServletRequest request) throws Exception {
+		List<ProductDTO> list = dao.list();
+		request.setAttribute("list", list);
+	
 		return "product/list";
-	}
+	}	
 	
 	@RequestMapping(value="detail",method =RequestMethod.GET)
 	public String detail(ProductDTO productDTO,Model model) {
+		productDTO = dao.detail(productDTO);
+		model.addAttribute("detail", productDTO);
 		
 		return "product/detail";
 	}
