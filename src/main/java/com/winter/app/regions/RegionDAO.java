@@ -7,8 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.winter.app.util.DBConnector;
+import org.springframework.stereotype.Repository;
 
+import com.winter.app.util.DBConnector;
+@Repository
 public class RegionDAO {
 
 	
