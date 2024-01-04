@@ -15,7 +15,7 @@ public class ProductController {
 	
 	private ProductDTO dto ;
 	private ProductDAO dao ;
-	
+
 	public ProductController() {
 		this.dto = new ProductDTO();
 		this.dao = new ProductDAO();
@@ -43,14 +43,11 @@ public class ProductController {
 		return "product/add";
 	}
 	@RequestMapping(value="add",method = RequestMethod.POST)
-	public String add(HttpServletRequest request) throws Exception {
-		dto.setProductnum(Long.valueOf( request.getParameter("productnum")) );
-		dto.setProductname(request.getParameter("productname"));
-		dto.setProductcontents(request.getParameter("productcontents"));
-		dto.setProductrate(Double.valueOf( request.getParameter("productrate") ));
-		dto.setProductjumsu(Double.valueOf( request.getParameter("productjumsu") ));
-		int result = dao.add(dto);
-		request.setAttribute("result", result);
+	public String add(ProductDTO productDTO, Model model) throws Exception {
+	
+		
+		int result = dao.add(productDTO);
+		model.addAttribute("result", result);
 		
 		return "result/result";
 	}

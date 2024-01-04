@@ -14,7 +14,7 @@
 	if(result > 0) alert("등록 성공")
 	else alert("등록 실패")
 	
-	location.href="list.jsp";
+	location.href="list	";
 </script>
 </body>
 </html>

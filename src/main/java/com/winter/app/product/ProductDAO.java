@@ -71,10 +71,7 @@ public class ProductDAO {
 		return dto;
 	}
 	
-	public void add() {
-		
-		
-	}
+	
 	
 	public int add(ProductDTO productDTO) throws Exception {
 		int result = 0;	
