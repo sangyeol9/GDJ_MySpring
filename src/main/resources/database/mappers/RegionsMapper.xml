@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- mapper의 namespace는 비우면,중복이되면 error  -->
+  <!-- 해당 mapper를 사용할 DAO의 Full package명  -->
+  <mapper namespace="com.winter.app.regions.RegionDAO">
+  		<!-- detail  -->
+  		<!-- ID = DAO의 메서드명  -->
+  	<select id="getDetail" resultType="com.winter.app.regions.RegionDTO" parameterType="com.winter.app.regions.RegionDTO">
+  		SELECT * FROM REGIONS WHERE REGION_ID = #{region_id}
+  	</select>
+  	
+  	<select id="getList" resultType="com.winter.app.regions.RegionDTO">
+  		SELECT * FROM REGIONS
+  	</select>
+  	
+  	<update id="update"  parameterType="com.winter.app.regions.RegionDTO">
+  		UPDATE REGIONS SET REGION_NAME ='HELLO' WHERE REGION_ID = #{region_id}
+  	</update>
+  </mapper>
+  
