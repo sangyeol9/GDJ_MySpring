@@ -1,5 +1,6 @@
 package com.winter.app.departments;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -30,6 +31,14 @@ public class DepartmentDAOTest extends MyTest{
 		dto=dao.detail(dto);
 		
 		assertNotNull(dto);
+	}
+	@Test
+	public void test3() throws Exception {
+		DepartmentDTO departmentDTO = new DepartmentDTO();
+		departmentDTO.setDepartment_id(280);
+		departmentDTO.setDepartment_name("Test55");
+		int result = dao.update(departmentDTO);
+		assertEquals(1, result);
 	}
 	
 }

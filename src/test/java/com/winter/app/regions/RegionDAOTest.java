@@ -40,4 +40,23 @@ public class RegionDAOTest extends MyTest {
 		assertEquals(0, test);
 	}
 	
+//	@Test
+//	public void add() throws Exception{
+//		RegionDTO dto = new RegionDTO();
+//		
+//		dto.setRegion_name("test");
+//		int result = dao.addRegion(dto);
+//		
+//		assertNotEquals(0, result);
+//	}
+//	
+//	@Test
+//	public void delete() throws Exception {
+//		RegionDTO dto = new RegionDTO();
+//		dto.setRegion_id(11);
+//		int result = dao.delete(dto);
+//		
+//		assertEquals(1, result);
+//	}
+	
 }

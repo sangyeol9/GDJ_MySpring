@@ -8,15 +8,18 @@
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id = "dataSource">
 		<property name="username" value="user01"></property>
 		<property name="password" value="user01"></property>
-		<property name="url" value = "jdbc:oracle:thin:@54.180.80.129:1521:xe"></property>
+		<property name="url" value = "jdbc:oracle:thin:@52.79.239.226:1521:xe"></property>
 		<property name="driverClassName" value = "oracle.jdbc.driver.OracleDriver"></property>
 	</bean>
 
+	<!-- 매퍼의 위치를 알려주고 DB연결  -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:database/config/mybatisConfig.xml"></property>
 		<property name="mapperLocations" value="classpath:database/mappers/*Mapper.xml"></property>
 	</bean>
-
+	
+	<!-- 최종 사용  / sql ? 작성 및 데이터 운반 ?   -->
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
 			

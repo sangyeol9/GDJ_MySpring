@@ -33,6 +33,11 @@ public class DepartmentDAO {
 		return sqlSession.selectOne(namespace+"detail",departmentDTO);
 	}
 
+	public int update(DepartmentDTO departmentDTO) throws Exception{
+		return sqlSession.update(namespace+"update",departmentDTO);
+		
+	}
+	
 }
 //	public int update(DepartmentDTO departmentDTO,int temp) throws Exception{
 //		Connection con = DBConnector.getConnector();

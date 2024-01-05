@@ -19,18 +19,14 @@
 	
 		<section id="contents" class = "container-fluid">
 			<div class="row">
-				<form action = "add" method="post">
-				  <div class="mb-3">
-				    <label for="regionId" class="form-label">region_ID</label>
-				    <input type="text" class="form-control" id="regionId" aria-describedby="emailHelp" name="region_id" readonly="readonly" value =999>
-				    <div id="emailHelp" class="form-text">We'll never share your regionId with anyone else.</div>
-				  </div>
+				<form action = "update" method="post">
+				  <input type="hidden" name="region_id" value="${update_dto.region_id }">
 				  <div class="mb-3">
 				    <label for="regionName" class="form-label">region_Name</label>
-				    <input type="text" class="form-control" id="regionName" name="region_name">
+				    <input type="text" class="form-control" id="regionName" name="region_name" value="${update_dto.region_name}">
 				  </div>
 				  
-				  <button type="submit" class="btn btn-primary">Add</button>
+				  <button type="submit" class="btn btn-primary">Update</button>
 </form>	
 			
 		 	</div>
