@@ -1,6 +1,7 @@
 package com.winter.app;
 
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -23,5 +24,13 @@ public class Testcom extends MyTest {
 		
 	}
 	
+	@Test
+	public void testDetail() throws Exception{
+		ProductDTO dto = new ProductDTO();
+		dto.setProductnum(1L);
+		dto = dao.detail(dto);
+		
+		assertNotNull(dto.getProductcontents());
+	}
 	
 }

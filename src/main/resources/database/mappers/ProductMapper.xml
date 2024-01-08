@@ -8,5 +8,21 @@
   		<select id="list" resultType="ProductDTO">
   			SELECT * FROM PRODUCT
   		</select>
+  		
+  		<select id="detail" resultType="ProductDTO" parameterType="ProductDTO">
+  			SELETE * FROM PRODUCT WHERE PRODUCTNUM = #{PRODUCTNUM}
+  		</select>
+  		
+  		<update id="update" parameterType="ProductDTO">
+  			UPDATE PRODUCT SET PRODUCTNAME = #{PRODUCTNAME} WHERE #{PRODUCTNUM}
+  		</update>
+  		
+  		<insert id="add" parameterType="ProductDTO">
+  			INSERT INTO PRODUCT VALUES{#{PRODUCTNUM},#{PRODUCTNAME},#{PRODUCTCONTENTS},#{PRODUCTDATE,PRODUCTJUMSU}
+  		</insert>
+  		
+  		<delete id="delete" parameterType="ProductDTO">
+  			DELETE PRODUCT WHERE #{PRODUCTNUM}
+  		</delete>
   </mapper>
   
